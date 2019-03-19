@@ -1,0 +1,18 @@
+version: "3"
+
+services: 
+  nginx:
+    restart: always
+    image: nginx-upload-progress:latest
+    container_name: nginx
+    volumes: 
+      - ./file.conf:/etc/nginx/conf.d/file.conf
+      - ./conf.d:/etc/nginx/conf.d
+      - ./logs:/var/log/nginx
+      - ./data:/var/www/file
+    working_dir: /var/www/file
+    expose: 
+      - 8000
+    ports: 
+      - 40080:8000
+      - 10000:10000
