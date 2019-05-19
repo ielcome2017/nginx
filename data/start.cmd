@@ -1,0 +1,1 @@
+docker run -dit --name files0 --restart always -p 3002:8000 -v file.conf:/etc/nginx/conf.d/file.conf -v data:/var/www/file -w /var/www/file nginx
